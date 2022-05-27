@@ -29,7 +29,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                      <h1>Categories</h1>
+                      <h1>Category</h1>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">All</li>
@@ -43,42 +43,20 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuW8zSw-e8tojTVvcsfgqaBBuwm2xfovWOKSfVHt2A3cDvgJY9fyOUSAIlZeaGK0YTeRY&usqp=CAU" class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <small>Categories: Pets</small>
+
+                    {% for photo in photos %}
+                        <div class="col-md-4">
+                            <div class="card my-2">
+                                <img src="{{photo.image.url}}" class="image-thumbnail" alt="...">
+                                <div class="card-body">
+                                    <small>Categories: Pets</small>
+                                </div>
+                                <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
                             </div>
-                            <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuW8zSw-e8tojTVvcsfgqaBBuwm2xfovWOKSfVHt2A3cDvgJY9fyOUSAIlZeaGK0YTeRY&usqp=CAU" class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <small>Categories: Pets</small>
-                            </div>
-                            <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuW8zSw-e8tojTVvcsfgqaBBuwm2xfovWOKSfVHt2A3cDvgJY9fyOUSAIlZeaGK0YTeRY&usqp=CAU" class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <small>Categories: Pets</small>
-                            </div>
-                            <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuW8zSw-e8tojTVvcsfgqaBBuwm2xfovWOKSfVHt2A3cDvgJY9fyOUSAIlZeaGK0YTeRY&usqp=CAU" class="image-thumbnail" alt="...">
-                            <div class="card-body">
-                                <small>Categories: Pets</small>
-                            </div>
-                            <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                        </div>
-                    </div>
+                        {% empty %}
+                        <h2>No Photos.....</h2>
+                    {% endfor %}
                 </div>
             </div>
         </div>
