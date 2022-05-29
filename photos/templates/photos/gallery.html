@@ -49,9 +49,9 @@
                             <div class="card my-2">
                                 <img src="{{photo.image.url}}" class="image-thumbnail" alt="...">
                                 <div class="card-body">
-                                    <small>Categories: Pets</small>
+                                    <small>Categories: {{photo.category.name}}</small> 
                                 </div>
-                                <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+                                <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
                             </div>
                         </div>
                         {% empty %}
