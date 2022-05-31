@@ -23,8 +23,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'gallery' %}">Personal gallery</a> 
-            <form class="d-flex" action="">
+            <a class="navbar-brand" href="{% url 'gallery' %}">Personal AlbumShare</a> 
+            <form class="d-flex" action="{% url 'search' %}">
                 <input class="form-control me-2" type="search"
                   placeholder="search categories" aria-label="Search"
                   name="query" >
@@ -68,6 +68,8 @@
                                 <div class="card-body">
                                     <small>Categories: {{photo.category.name}}</small> 
                                 </div>
+                                <button type="button" class="btn btn-success btn-sm mt-1 copy-btn"
+                                    data-url="{% url 'photo' photo.id %}">copy url</button>
                                 <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
                             </div>
                         </div>

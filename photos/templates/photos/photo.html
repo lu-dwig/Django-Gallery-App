@@ -18,7 +18,7 @@
                 <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>         
                 <div style="height:90vh;">
                     <img style="max-width:100%; max-height:100%;"
-                     src="https://images.unsplash.com/photo-1605374180794-204296e6df5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFuY3l8ZW58MHx8MHx8&w=1000&q=80" alt="">
+                     src="{{photo.image.url}}" alt="Image You Might Like">
                     <p>{{photo.description}}</p>
                 </div>
             </div>

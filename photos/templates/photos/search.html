@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH</title>
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body class="m-5">
+    <div class="row">
+        <h2 class="border-bottom">SEARCH PAGE</h2>
+      {% for photo in photos %}
+      <div class="col-md-4">
+            <div class="card my-2">
+                <img style='height: 250px;object-fit:cover;' src="{{photo.image.url}}" class="card-img-top" alt="photo image">
+                <div class="card-body">
+                  <p class="card-text">Category: {{photo.category.name}}</p>
+                </div>
+                <button type="button" class="btn btn-success mt-1 copy-btn"
+                    data-url="{% url 'photo' photo.id %}">copy image url</button>
+                <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm">view</a>
+            </div>
+      </div>
+      {% empty %}
+        <h3>No such category in the category data... Kindly  try all</h3>
+      {% endfor %}
+    </div>
+    
+</body>
+</html>
