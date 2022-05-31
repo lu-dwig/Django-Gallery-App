@@ -23,6 +23,7 @@ def viewPhoto(request, pk):
     photo = Photo.objects.all()
     photo = Photo.objects.filter(id=pk)
     
+    
     return render(request, 'photos/photo.html', {'photo':photo})
 
 def addPhoto(request):
